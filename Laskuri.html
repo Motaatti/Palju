@@ -1,33 +1,60 @@
 <!DOCTYPE html>
 <script>
-    function Laskut()
-{
+    function Laskut() //funktiot joilla ohjelma laskee ympärysmitan ja tilavuuden 
+{ 
         num1 = document.getElementById("Leveys").value;
         num2 = document.getElementById("Syvyys").value;
         document.getElementById("result").innerHTML = 2 * Math.PI * (num1 / 2) ;
         document.getElementById("result2").innerHTML = Math.PI * (num1/2)**2 * num2 / 1000;
 }
+function Mitat() //funktiot joilla ohjelma laskee tarvittavien lankkujen määrän
+    {
+        num3 = document.getElementById("Leveys").value;
+        num4 = document.getElementById("mitat").value;
+        document.getElementById("tulos").innerHTML = 2 * Math.PI * (num3 / 2) / num4 ;
+    }
 </script>
+
 <html> 
 <head>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="style.css"> <!--Linkki css:ään-->
 </head>
 <body>
     <div class="kaikki">
         <h1>Paljun laskenta ohjelma</h1>
-Kirjoita leveys: <input type="text" id="Leveys" placeholder="cm" required/><br> <br>
+Kirjoita leveys: <input type="text" id="Leveys" placeholder="cm" required/><br> <br> <!--Paljun mitta inputit-->
 Kirjoita syvyys: <input type="text" id="Syvyys" placeholder="cm" required/><br> <br>
 <input type="button" onClick="Laskut()" Value="Laske" />
-<p>Ympärysmitta </p> 
+<p>Ymp&auml;rysmitta </p> 
 <span id = "result"></span> cm
 <p>Tilavuus</p>
 <span id = "result2"></span> L
 <br>
 </div>
+
+
 <div class="Nappi"><br>
-<button>
-    <a href="Lankku.html"><u>Seuraava vaihe ------> </u></a>
-</button>
+<button class="Nappi1">
+    <a href="Lankku.html"><u>Seuraava vaihe ------> </u></a> <!--Nappi seuraavaan vaiheeseen-->
+</button> 
+</div> <br>
+<div class="kaikki2"> 
+    
+<h1>Valitse lankut</h1>
+            <div class="Kuvat"> <!--Kuvat paljun rakennuspuista-->
+                <img src="Kuusi.jpg" height="30%" width="35%">
+                <img src="manty.jpg" height="30%" width="35%">
+            </div>
+<select name="mitat" id="mitat" required> <!--Paljun rakennuspuiden valitseminen-->
+    <option value="6">Kuusi: 6cm x100cm</option>
+    <option value="12">Kuusi: 12cm x100cm</option>
+    <option value="18">Kuusi: 18cm x100cm</option>
+    <option value="6">Manty: 6cm x100cm</option>
+    <option value="12">Manty: 12cm x100cm</option>
+    <option value="18">Manty: 18cm x100cm</option>
+</select>
+<input type="button" onClick="Mitat()" Value="Laske" />
+<span id="tulos"></span>
 </div>
 </body>
 </html>

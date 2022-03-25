@@ -1,7 +1,7 @@
 body{
     background-image: url(Tausta.jpg);
 }
-.kaikki{
+.kaikki, .kaikki2{
     text-align: center;
     background-color: white;
     padding: 16px 20px;
@@ -9,7 +9,7 @@ body{
     max-width: 60%;
     margin: auto;
 }
-button {
+.Nappi1{
     
     width: 50%;
     color: #090909;
@@ -24,9 +24,7 @@ button {
                 
    }
    
-   button:hover {
-    border: 1px solid white;
-   }
+   
    
    button:active {
     box-shadow: 4px 4px 12px #c5c5c5,
@@ -37,3 +35,4 @@ button {
 .Nappi{
     text-align: center;
 }
+
