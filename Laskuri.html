@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<script>
+    function Laskut()
+{
+        num1 = document.getElementById("Leveys").value;
+        num2 = document.getElementById("Syvyys").value;
+        document.getElementById("result").innerHTML = 2 * Math.PI * (num1 / 2) ;
+        document.getElementById("result2").innerHTML = Math.PI * (num1/2)**2 * num2 / 1000;
+}
+</script>
+<html> 
+<head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <div class="kaikki">
+        <h1>Paljun laskenta ohjelma</h1>
+Kirjoita leveys: <input type="text" id="Leveys" placeholder="cm" required/><br> <br>
+Kirjoita syvyys: <input type="text" id="Syvyys" placeholder="cm" required/><br> <br>
+<input type="button" onClick="Laskut()" Value="Laske" />
+<p>Ympärysmitta </p> 
+<span id = "result"></span> cm
+<p>Tilavuus</p>
+<span id = "result2"></span> L
+<br>
+</div>
+<div class="Nappi"><br>
+<button>
+    <a href="Lankku.html"><u>Seuraava vaihe ------> </u></a>
+</button>
+</div>
+</body>
+</html>
