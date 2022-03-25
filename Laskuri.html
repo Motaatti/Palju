@@ -1,20 +1,29 @@
 <!DOCTYPE html>
 <script>
-    function Laskut() //funktiot joilla ohjelma laskee ympärysmitan ja tilavuuden 
+     function Laskut() //funktiot joilla ohjelma laskee ympärysmitan ja tilavuuden 
 { 
         num1 = document.getElementById("Leveys").value;
         num2 = document.getElementById("Syvyys").value;
-        document.getElementById("result").innerHTML = 2 * Math.PI * (num1 / 2) ;
-        document.getElementById("result2").innerHTML = Math.PI * (num1/2)**2 * num2 / 1000;
+
+        let YmpM = 2 * Math.PI * (num1 / 2) ;
+        let YmpM2 = YmpM.toFixed(2);
+        let Tilavuus = Math.PI * (num1/2)**2 * num2 / 1000;
+        let Tilavuus2 = Tilavuus.toFixed(2)
+
+        document.getElementById("result").innerHTML = YmpM2;
+        document.getElementById("result2").innerHTML = Tilavuus2;
 }
 function Mitat() //funktiot joilla ohjelma laskee tarvittavien lankkujen määrän
     {
         num3 = document.getElementById("Leveys").value;
         num4 = document.getElementById("mitat").value;
-        document.getElementById("tulos").innerHTML = 2 * Math.PI * (num3 / 2) / num4 ;
+
+        let Lankut = 2 * Math.PI * (num3 / 2) / num4 + 1 ;
+        let Lankut2 = Lankut.toFixed(0);
+
+        document.getElementById("tulos").innerHTML = Lankut2;
     }
 </script>
-
 <html> 
 <head>
     <link rel="stylesheet" type="text/css" href="style.css"> <!--Linkki css:ään-->
