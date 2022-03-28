@@ -22,6 +22,24 @@ function Mitat() //funktiot joilla ohjelma laskee tarvittavien lankkujen määr�
         let Lankut2 = Lankut.toFixed(0);
 
         document.getElementById("tulos").innerHTML = Lankut2;
+
+       
+        
+        if(document.getElementById('mitat').value == "6") { // Laskee yhteishinnan lankuille 
+     let Hin2 = Lankut2 * 0.80;       
+     let Hin22 = Hin2.toFixed(2);
+     document.getElementById("Yhinta").innerHTML = Hin22;
+    }
+    else if (document.getElementById('mitat').value == "12") {
+     let Hin3 = Lankut2 * 1.40;
+     let Hin33 = Hin3.toFixed(2);
+     document.getElementById("Yhinta").innerHTML =  Hin33;
+    }
+    else if(document.getElementById('mitat').value == "18") {
+        let Hin4 = Lankut2 * 1.90;
+        let Hin44 = Hin4.toFixed(2);
+     document.getElementById("Yhinta").innerHTML = Hin44;
+    }
     }
 
     function Naytalankut() {
@@ -42,6 +60,13 @@ function Mitat() //funktiot joilla ohjelma laskee tarvittavien lankkujen määr�
        document.getElementById("Syvyys5").innerHTML = "Mänty: 8cm x" + Syv2 + "cm";
        document.getElementById("Syvyys6").innerHTML = "Mänty: 12cm x" + Syv2 + "cm";
        document.getElementById("Syvyys7").innerHTML = "Mänty: 18cm x" + Syv2 + "cm";
+    }
+    function Hin2ta(){
+        Hinta1 = document.getElementById("tulos").value
+        
+        if(document.getElementById('mitat').value == "6") {
+     document.getElementById("Yhinta").innerHTML = Hinta1 * 0.80;
+    }
     }
 </script>
 
@@ -71,21 +96,23 @@ Kirjoita syvyys: <input type="text" id="Syvyys" placeholder="cm" required/><br> 
 <div class="kaikki2" id="myDIV" style="display: none;"> 
     
 <h1>Valitse lankut</h1>
+<h2>Kuusi Mänty</h2>
             <div class="Kuvat"> <!--Kuvat paljun rakennuspuista-->
-                <img src="Kuusi.jpg" height="30%" width="35%">
+                <img src="Kuusi.jpg" height="30%" width="35%">           
                 <img src="manty.jpg" height="30%" width="35%">
             </div>
 <select name="mitat" id="mitat" required> <!--Paljun rakennuspuiden valitseminen-->
-    <option id="Syvyys2" value="6">Kuusi: 6cm </option>
-    <option id="Syvyys3" value="12">Kuusi: 12cm </option>
-    <option id="Syvyys4" value="18">Kuusi: 18cm </option>
-    <option id="Syvyys5" value="6">Manty: 6cm </option>
-    <option id="Syvyys6" value="12">Manty: 12cm </option>
-    <option id="Syvyys7" value="18">Manty: 18cm </option>
+    <option id="Syvyys2" value="6">Kuusi: 6cm 0,80€</option>
+    <option id="Syvyys3" value="12">Kuusi: 12cm 1,40€</option>
+    <option id="Syvyys4" value="18">Kuusi: 18cm 1,90€</option>
+    <option id="Syvyys5" value="6">Manty: 6cm 0,80€</option>
+    <option id="Syvyys6" value="12">Manty: 12cm 1,40€</option>
+    <option id="Syvyys7" value="18">Manty: 18cm 1,90€</option>
 </select>
-<input type="button" onClick="Mitat()" Value="Laske" /> <br>
+<input type="button" onClick="Mitat();" Value="Laske" /> <br>
 <p>Lautojen tarvittava määrä:</p>
 <span id="tulos"></span> kpl
+<span id="Yhinta"></span> €
 </div>
 </body>
 </html>
